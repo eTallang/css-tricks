@@ -1,5 +1,5 @@
-import { QueryList } from '@angular/core';
-import { Subscription, fromEvent } from 'rxjs';
+import { QueryList, Injectable } from '@angular/core';
+import { Subscription, fromEvent, Subject } from 'rxjs';
 
 import { AnchorElementDirective } from './anchor-element.directive';
 import { KeyControls } from './key-controls';
@@ -9,8 +9,10 @@ import { KeyControls } from './key-controls';
  * Configuration should happen in the AppComponent, while each component should be able
  * to provide a new list of navigation items
  */
+@Injectable({providedIn: 'root'})
 export class NavigationManager {
   private subscriptions = new Subscription();
+  private anchorItems: QueryList<AnchorElementDirective>;
   private shouldWrap = false;
   private anchorIndexInFocus = 0;
   private navKeys: KeyControls = {
@@ -19,9 +21,17 @@ export class NavigationManager {
     nextPage: 'ArrowRight',
     prevPage: 'ArrowLeft'
   };
+  private pageChange = new Subject<'next' | 'previous'>();
+  pageChange$ = this.pageChange.asObservable();
 
-  constructor(private navigationItems: QueryList<AnchorElementDirective>) {
+  constructor() {
     this.subscriptions.add(fromEvent(window, 'keydown').subscribe((keyEvent: KeyboardEvent) => this.onKeyDown(keyEvent)));
+  }
+
+  setAnchorItems(anchorItems: QueryList<AnchorElementDirective>): this {
+    this.anchorIndexInFocus = 0;
+    this.anchorItems = anchorItems;
+    return this;
   }
 
   onDestroy(): void {
@@ -47,18 +57,19 @@ export class NavigationManager {
         if (this.anchorIndexInFocus !== 0) {
           this.scrollToAnchorIndex(--this.anchorIndexInFocus);
         } else if (this.shouldWrap) {
-          this.anchorIndexInFocus = this.navigationItems.length - 1;
+          this.anchorIndexInFocus = this.anchorItems.length - 1;
           this.scrollToAnchorIndex(this.anchorIndexInFocus);
         }
         keyEvent.preventDefault();
         break;
       }
       case this.navKeys.nextPage: {
+        this.pageChange.next('next');
         keyEvent.preventDefault();
         break;
       }
       case this.navKeys.down: {
-        if (this.anchorIndexInFocus !== this.navigationItems.length - 1) {
+        if (this.anchorIndexInFocus !== this.anchorItems.length - 1) {
           this.scrollToAnchorIndex(++this.anchorIndexInFocus);
         } else if (this.shouldWrap) {
           this.anchorIndexInFocus = 0;
@@ -68,6 +79,7 @@ export class NavigationManager {
         break;
       }
       case this.navKeys.prevPage: {
+        this.pageChange.next('previous');
         keyEvent.preventDefault();
         break;
       }
@@ -75,7 +87,7 @@ export class NavigationManager {
   }
 
   private scrollToAnchorIndex(index: number): void {
-    this.navigationItems
+    this.anchorItems
       .toArray()
       [index].elementRef.nativeElement.scrollIntoView({ behavior: 'smooth' });
   }

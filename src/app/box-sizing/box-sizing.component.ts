@@ -1,4 +1,4 @@
-import { Component, ViewChildren, QueryList, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
 
 import { AnchorElementDirective } from '../navigation/anchor-element.directive';
 import { NavigationManager } from '../navigation/navigation-manager';
@@ -8,15 +8,12 @@ import { NavigationManager } from '../navigation/navigation-manager';
   templateUrl: './box-sizing.component.html',
   styleUrls: ['./box-sizing.component.css']
 })
-export class BoxSizingComponent implements AfterViewInit, OnDestroy {
+export class BoxSizingComponent implements AfterViewInit {
   @ViewChildren(AnchorElementDirective) anchorElements = new QueryList<AnchorElementDirective>();
-  navigationManager: NavigationManager;
+
+  constructor(private navigationManager: NavigationManager) { }
 
   ngAfterViewInit() {
-    this.navigationManager = new NavigationManager(this.anchorElements).withWrap();
-  }
-
-  ngOnDestroy() {
-    this.navigationManager.onDestroy();
+    this.navigationManager.setAnchorItems(this.anchorElements);
   }
 }
