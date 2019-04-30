@@ -1,11 +1,19 @@
 import { QueryList } from '@angular/core';
-import { AnchorElementDirective } from './anchor-element.directive';
 import { Subscription, fromEvent } from 'rxjs';
+
+import { AnchorElementDirective } from './anchor-element.directive';
+import { KeyControls } from './key-controls';
 
 export class NavigationManager {
   private subscriptions = new Subscription();
   private shouldWrap = false;
   private anchorIndexInFocus = 0;
+  private navKeys: KeyControls = {
+    up: 'ArrowUp',
+    down: 'ArrowDown',
+    nextPage: 'ArrowRight',
+    prevPage: 'ArrowLeft'
+  };
 
   constructor(private navigationItems: QueryList<AnchorElementDirective>) {
     this.subscriptions.add(fromEvent(window, 'keydown').subscribe((keyEvent: KeyboardEvent) => this.onKeyDown(keyEvent)));
@@ -20,13 +28,17 @@ export class NavigationManager {
     return this;
   }
 
-  useWASD(use = false): this {
+  withKeys(keys: Partial<KeyControls>): this {
+    this.navKeys = {
+      ...this.navKeys,
+      ...keys
+    };
     return this;
   }
 
   onKeyDown(keyEvent: KeyboardEvent): void {
     switch (keyEvent.code) {
-      case 'ArrowUp': {
+      case this.navKeys.up: {
         if (this.anchorIndexInFocus !== 0) {
           this.scrollToAnchorIndex(--this.anchorIndexInFocus);
         } else if (this.shouldWrap) {
@@ -36,11 +48,11 @@ export class NavigationManager {
         keyEvent.preventDefault();
         break;
       }
-      case 'ArrowRight': {
+      case this.navKeys.nextPage: {
         keyEvent.preventDefault();
         break;
       }
-      case 'ArrowDown': {
+      case this.navKeys.down: {
         if (this.anchorIndexInFocus !== this.navigationItems.length - 1) {
           this.scrollToAnchorIndex(++this.anchorIndexInFocus);
         } else if (this.shouldWrap) {
@@ -50,7 +62,7 @@ export class NavigationManager {
         keyEvent.preventDefault();
         break;
       }
-      case 'ArrowUp': {
+      case this.navKeys.prevPage: {
         keyEvent.preventDefault();
         break;
       }
