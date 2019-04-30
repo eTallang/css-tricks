@@ -1,0 +1,27 @@
+nav {
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 50px 20px 10px;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(220, 113, 106, .9);
+}
+
+.menu-item {
+  padding: 10px;
+  margin: 0 10px;
+  padding-bottom: 5px;
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom-color .4s ease, padding-bottom .4s ease;
+  text-decoration: none;
+  font-size: .9rem;
+  letter-spacing: 2px;
+}
+
+.menu-item:hover, .menu-item.active {
+  padding-bottom: 10px;
+  border-bottom-color: white;
+}

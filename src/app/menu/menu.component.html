@@ -1,0 +1,3 @@
+<nav>
+  <a class="menu-item" role="menuitem" *ngFor="let menuItem of menuItems" [routerLink]="menuItem.url" routerLinkActive="active">{{ menuItem.name }}</a>
+</nav>

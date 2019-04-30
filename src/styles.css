@@ -1,1 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-color: rgb(220, 113, 106);
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background-color: var(--primary-color);
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+span,
+a {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+}
+
+.full-slide {
+  height: 100vh;
+  padding-top: 250px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.full-slide h1 {
+  background-color: white;
+  color: var(--primary-color);
+  padding: 20px 40px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  display: inline-block;
+  margin: 0 auto;
+}
