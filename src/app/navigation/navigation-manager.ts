@@ -36,7 +36,7 @@ export class NavigationManager {
     return this;
   }
 
-  onKeyDown(keyEvent: KeyboardEvent): void {
+  private onKeyDown(keyEvent: KeyboardEvent): void {
     switch (keyEvent.code) {
       case this.navKeys.up: {
         if (this.anchorIndexInFocus !== 0) {
