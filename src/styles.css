@@ -24,12 +24,12 @@ a {
 
 .full-slide {
   height: 100vh;
-  padding-top: 250px;
+  padding-top: 150px;
   box-sizing: border-box;
   text-align: center;
 }
 
-.full-slide h1 {
+h1 {
   background-color: white;
   color: var(--primary-color);
   padding: 20px 40px;

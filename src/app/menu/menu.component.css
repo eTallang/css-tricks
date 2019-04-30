@@ -13,7 +13,7 @@ nav {
   padding: 0 10px;
   margin: 0 10px;
   display: inline-block;
-  border-bottom: 2px solid transparent;
+  border-bottom: 2px dashed transparent;
   transition: border-bottom-color .2s ease, padding-bottom .4s ease;
   text-decoration: none;
   font-size: .875rem;
