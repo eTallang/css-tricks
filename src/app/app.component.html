@@ -1,4 +1,4 @@
 <app-menu></app-menu>
-<main @routeAnimations class="page-container">
-  <router-outlet></router-outlet>
+<main [@routeAnimations]="prepareRoute(outlet)" class="page-container">
+  <router-outlet #outlet="outlet"></router-outlet>
 </main>
