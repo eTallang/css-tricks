@@ -37,7 +37,7 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 3px;
   display: inline-block;
-  margin: 0 auto 4em;
+  margin: 0 auto 2em;
 }
 
 pre {
@@ -52,4 +52,9 @@ pre {
 
 p {
   font-size: 1.3em;
+}
+
+video {
+  display: block;
+  margin: 0 auto;
 }

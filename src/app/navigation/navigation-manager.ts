@@ -4,11 +4,6 @@ import { Subscription, fromEvent, Subject } from 'rxjs';
 import { AnchorElementDirective } from './anchor-element.directive';
 import { KeyControls } from './key-controls';
 
-/**
- * This should be a service (it's logically something we want to treat as a singleton)
- * Configuration should happen in the AppComponent, while each component should be able
- * to provide a new list of navigation items
- */
 @Injectable({providedIn: 'root'})
 export class NavigationManager {
   private subscriptions = new Subscription();
