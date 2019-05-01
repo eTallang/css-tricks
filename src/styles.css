@@ -25,9 +25,16 @@ a {
 
 .full-slide {
   height: 100vh;
-  padding-top: 150px;
+  padding-top: 200px;
   box-sizing: border-box;
   text-align: center;
+}
+
+.centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0;
 }
 
 h1 {
@@ -54,7 +61,7 @@ p {
   font-size: 1.3em;
 }
 
-video {
+video, img {
   display: block;
   margin: 0 auto;
 }
