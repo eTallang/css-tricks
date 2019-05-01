@@ -1,12 +1,29 @@
 <div class="full-slide" appAnchorElement>
-  <h1>Element one</h1>
+  <h1>The problem</h1>
+  <div class="outer-container">
+    Outer container
+    <div class="inner-container">
+      Inner container without box sizing
+    </div>
+  </div>
 </div>
 <div class="full-slide" appAnchorElement>
-  <h1>Element two</h1>
+  <h1>The sollution</h1>
+  <div class="outer-container">
+    Outer container
+    <div class="inner-container with-box-sizing">
+      Inner container with box sizing "border box"
+    </div>
+  </div>
 </div>
 <div class="full-slide" appAnchorElement>
-  <h1>Element three</h1>
-</div>
-<div class="full-slide" appAnchorElement>
-  <h1>Element four</h1>
+  <h1>What's going on?</h1>
+  <div class="sub-section">
+    <pre>box-sixing: content-box;</pre>
+    <p>Calculated width = 70vw + 200px</p>
+  </div>
+  <div class="sub-section">
+    <pre>box-sixing: border-box;</pre>
+    <p>Calculated width = (70vw - 200px) + 200px</p>
+  </div>
 </div>

@@ -37,5 +37,19 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 3px;
   display: inline-block;
-  margin: 0 auto;
+  margin: 0 auto 4em;
+}
+
+pre {
+  font-family: 'Courier New', Courier, monospace;
+  padding: 3px 10px;
+  background-color: #222;
+  color: white;
+  border-radius: 3px;
+  display: inline-block;
+  font-size: 1.3em;
+}
+
+p {
+  font-size: 1.3em;
 }
