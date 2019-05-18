@@ -1,6 +1,6 @@
 :root {
   --primary-color: rgb(220, 113, 106);
-  --primary-color-05: rgba(220, 113, 106, .5);
+  --primary-color-05: rgba(220, 113, 106, 0.5);
 }
 
 body {
@@ -62,7 +62,30 @@ p {
   font-size: 1.3em;
 }
 
-video, img {
+video,
+img {
   display: block;
   margin: 0 auto;
+}
+
+.transparent-input {
+  background-color: transparent;
+  border: none;
+  width: min-content;
+  color: white;
+  font-family: inherit;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+* {
+  outline-color: white;
+  outline-width: 2px;
 }

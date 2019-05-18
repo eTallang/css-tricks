@@ -1,5 +1,58 @@
-<div class="full-slide">
+<div slide>
   <h1>
-    units works!
+    em vs rem
   </h1>
+  <img src="assets/confused.gif" alt="Confused" />
+</div>
+
+<div slide class="centered">
+  <div class="font-size-container" [ngStyle]="{ 'font-size.px': fontSize }">
+    Container with font size
+    <input class="transparent-input" [(ngModel)]="fontSize" type="number" max="36" />px
+    <div class="em">Element with font size 2em</div>
+    <div class="rem">Element with font size 2rem</div>
+  </div>
+</div>
+
+<div slide>
+  <h1>
+    old school widths
+  </h1>
+  <div class="vw">
+    50vw
+    <div class="percent">
+      70%
+      <div class="pixels">200px</div>
+    </div>
+  </div>
+</div>
+
+<div slide>
+  <h1>
+    Three column layout
+  </h1>
+  <div class="three-column-layout-container">
+    <div class="three-column-layout"></div>
+    <div class="three-column-layout"></div>
+    <div class="three-column-layout"></div>
+  </div>
+</div>
+
+<div slide>
+  <h1>
+    woooow
+  </h1>
+  <img src="assets/surprised.gif" alt="Surprised" width="400px" style="margin-bottom: 10px" />
+  <img src="assets/breakpoints.png" alt="Bbreakpoints" width="500px" />
+</div>
+
+<div slide>
+  <h1>
+    css grid
+  </h1>
+  <div class="grid-container">
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+    <div class="grid-item"></div>
+  </div>
 </div>
