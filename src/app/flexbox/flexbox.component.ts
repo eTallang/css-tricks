@@ -1,6 +1,6 @@
 import { Component, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
 
-import { AnchorElementDirective } from '../navigation/anchor-element.directive';
+import { SlideDirective } from '../navigation/slide.directive';
 import { NavigationManager } from '../navigation/navigation-manager';
 
 @Component({
@@ -9,7 +9,7 @@ import { NavigationManager } from '../navigation/navigation-manager';
   styleUrls: ['./flexbox.component.css']
 })
 export class FlexboxComponent implements AfterViewInit {
-  @ViewChildren(AnchorElementDirective) elements: QueryList<AnchorElementDirective>;
+  @ViewChildren(SlideDirective) elements: QueryList<SlideDirective>;
   constructor(private navigationManager: NavigationManager) { }
 
   ngAfterViewInit() {

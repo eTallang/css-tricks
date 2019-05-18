@@ -1,6 +1,6 @@
 import { Component, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
 
-import { AnchorElementDirective } from '../navigation/anchor-element.directive';
+import { SlideDirective } from '../navigation/slide.directive';
 import { NavigationManager } from '../navigation/navigation-manager';
 
 @Component({
@@ -9,7 +9,7 @@ import { NavigationManager } from '../navigation/navigation-manager';
   styleUrls: ['./box-sizing.component.css']
 })
 export class BoxSizingComponent implements AfterViewInit {
-  @ViewChildren(AnchorElementDirective) anchorElements = new QueryList<AnchorElementDirective>();
+  @ViewChildren(SlideDirective) anchorElements = new QueryList<SlideDirective>();
 
   constructor(private navigationManager: NavigationManager) { }
 

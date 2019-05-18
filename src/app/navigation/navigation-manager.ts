@@ -1,13 +1,13 @@
 import { QueryList, Injectable } from '@angular/core';
 import { Subscription, fromEvent, Subject } from 'rxjs';
 
-import { AnchorElementDirective } from './anchor-element.directive';
+import { SlideDirective } from './slide.directive';
 import { KeyControls } from './key-controls';
 
 @Injectable({providedIn: 'root'})
 export class NavigationManager {
   private subscriptions = new Subscription();
-  private anchorItems: QueryList<AnchorElementDirective>;
+  private anchorItems: QueryList<SlideDirective>;
   private shouldWrap = false;
   private anchorIndexInFocus = 0;
   private navKeys: KeyControls = {
@@ -23,7 +23,7 @@ export class NavigationManager {
     this.subscriptions.add(fromEvent(window, 'keydown').subscribe((keyEvent: KeyboardEvent) => this.onKeyDown(keyEvent)));
   }
 
-  setAnchorItems(anchorItems: QueryList<AnchorElementDirective>): this {
+  setAnchorItems(anchorItems: QueryList<SlideDirective>): this {
     this.anchorIndexInFocus = 0;
     this.anchorItems = anchorItems;
     return this;

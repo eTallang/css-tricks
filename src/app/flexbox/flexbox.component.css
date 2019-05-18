@@ -3,7 +3,7 @@
   padding: 40px 0;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .flex-container p {
@@ -27,5 +27,6 @@
 }
 
 .padding-font {
-  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: var(--primary-color-05);
 }

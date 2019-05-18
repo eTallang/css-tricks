@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
-import { AnchorElementDirective } from './anchor-element.directive';
+
+import { SlideDirective } from './slide.directive';
 
 @NgModule({
-  declarations: [AnchorElementDirective],
-  exports: [AnchorElementDirective]
+  declarations: [SlideDirective],
+  exports: [SlideDirective]
 })
 export class NavigationModule {}
