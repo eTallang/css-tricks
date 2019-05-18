@@ -14,7 +14,12 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(private navigationManager: NavigationManager) {}
 
   ngOnInit() {
-    this.navigationManager.withWrap();
+    this.navigationManager.withWrap().withKeys({
+      up: 'KeyW',
+      prevPage: 'KeyA',
+      down: 'KeyS',
+      nextPage: 'KeyD'
+    });
   }
 
   ngOnDestroy() {
