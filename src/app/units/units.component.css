@@ -38,8 +38,6 @@
 
 .em,
 .rem {
-  background-color: var(--primary-color);
-  width: max-content;
   margin: 10px auto;
 }
 

@@ -1,13 +1,12 @@
 :root {
   --primary-color: rgb(220, 113, 106);
-  --primary-color-05: rgba(220, 113, 106, 0.5);
 }
 
 body {
   height: 100%;
   margin: 0;
   background-color: var(--primary-color);
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 p,
