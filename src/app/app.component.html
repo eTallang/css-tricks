@@ -1,4 +1,4 @@
-<app-menu></app-menu>
-<main [@routeAnimations]="prepareRoute(outlet)" class="page-container">
+<app-menu [whiteTheme]="isOnAboutPage(outlet)"></app-menu>
+<main [@routeAnimations]="prepareRoute(outlet)" class="page-container" [ngClass]="{'white': isOnAboutPage(outlet)}">
   <router-outlet #outlet="outlet"></router-outlet>
 </main>

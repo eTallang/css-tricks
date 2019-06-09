@@ -5,7 +5,11 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'box-sizing'
+    redirectTo: 'about'
+  },
+  {
+    path: 'about',
+    loadChildren: 'src/app/about/about.module#AboutModule', data: { name: 'about' }
   },
   {
     path: 'box-sizing',

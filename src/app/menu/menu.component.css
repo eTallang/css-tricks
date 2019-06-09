@@ -9,6 +9,7 @@ nav {
   background-color: rgba(220, 113, 106, .9);
   box-sizing: border-box;
   z-index: 1;
+  transition: background-color 400ms ease;
 }
 
 .menu-item {
@@ -20,9 +21,22 @@ nav {
   text-decoration: none;
   font-size: .875rem;
   letter-spacing: .7px;
+  transition: color 400ms ease, border-color 400ms ease;
 }
 
 .menu-item:hover, .menu-item.active {
   padding-bottom: 6px;
   border-bottom-color: white;
+}
+
+.white-theme {
+  background-color: white;
+}
+
+.white-theme .menu-item:hover, .white-theme .menu-item.active {
+  border-bottom-color: black;
+}
+
+.white-theme .menu-item {
+  color: black;
 }

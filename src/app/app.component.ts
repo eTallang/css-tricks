@@ -29,4 +29,8 @@ export class AppComponent implements OnInit, OnDestroy {
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData.name;
   }
+
+  isOnAboutPage(outlet: RouterOutlet): boolean {
+    return this.prepareRoute(outlet) === 'about';
+  }
 }

@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { NavigationManager } from '../navigation/navigation-manager';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 interface MenuItem {
   name: string;
@@ -13,8 +13,10 @@ interface MenuItem {
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+  @Input() whiteTheme = false;
   @ViewChild('rla') rla: any;
   menuItems: MenuItem[] = [
+    { name: 'About me', url: 'about' },
     { name: 'Box Sizing', url: 'box-sizing' },
     { name: 'Flexbox', url: 'flexbox' },
     // { name: 'Margin vs. padding', url: 'margin-vs-padding' },

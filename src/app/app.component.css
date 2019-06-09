@@ -1,3 +1,10 @@
 .page-container {
   position: relative;
+  height: 100vh;
+  background-color: var(--primary-color);
+  transition: background-color 400ms ease;
+}
+
+.white {
+  background-color: white;
 }
