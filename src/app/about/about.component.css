@@ -1,0 +1,54 @@
+.bg-secondary {
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.image-container {
+  height: 200px;
+  width: 200px;
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-right: 64px;
+  flex: none;
+  z-index: 1;
+}
+
+.image-container img {
+  height: 100%;
+}
+
+.title {
+  background-color: var(--primary-color);
+  padding: 8px 114px 8px 32px;
+  margin-bottom: 16px;
+  margin-left: -32px;
+  color: white;
+  letter-spacing: 5px;
+  font-size: 2.25rem;
+  font-weight: 500;
+}
+
+.sub-title {
+  color: black;
+  max-width: 370px;
+  margin: 0;
+}
+
+.resource-title {
+  font-weight: 300;
+  color: black;
+  margin: 0;
+}

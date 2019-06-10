@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NavigationManager } from '../navigation/navigation-manager';
 import { Router } from '@angular/router';
 
@@ -14,7 +14,6 @@ interface MenuItem {
 })
 export class MenuComponent implements OnInit {
   @Input() whiteTheme = false;
-  @ViewChild('rla') rla: any;
   menuItems: MenuItem[] = [
     { name: 'About me', url: 'about' },
     { name: 'Box Sizing', url: 'box-sizing' },

@@ -9,7 +9,7 @@ nav {
   background-color: rgba(220, 113, 106, .9);
   box-sizing: border-box;
   z-index: 1;
-  transition: background-color 400ms ease;
+  transition: opacity 400ms ease;
 }
 
 .menu-item {
@@ -30,13 +30,5 @@ nav {
 }
 
 .white-theme {
-  background-color: white;
-}
-
-.white-theme .menu-item:hover, .white-theme .menu-item.active {
-  border-bottom-color: black;
-}
-
-.white-theme .menu-item {
-  color: black;
+  opacity: 0;
 }

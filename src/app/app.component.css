@@ -1,6 +1,6 @@
 .page-container {
   position: relative;
-  height: 100vh;
+  height: 120vh;
   background-color: var(--primary-color);
   transition: background-color 400ms ease;
 }
