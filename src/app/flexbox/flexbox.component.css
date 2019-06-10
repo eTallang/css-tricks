@@ -29,5 +29,5 @@
 
 .padding-font {
   padding-bottom: 30px;
-  background-color: var(--primary-color-05);
+  background-color: rgba(0, 0, 0, .1);
 }
