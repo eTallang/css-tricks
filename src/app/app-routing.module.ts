@@ -9,27 +9,27 @@ const routes: Routes = [
   },
   {
     path: 'about',
-    loadChildren: 'src/app/about/about.module#AboutModule', data: { name: 'about' }
+    loadChildren: () => import('src/app/about/about.module').then(m => m.AboutModule), data: { name: 'about' }
   },
   {
     path: 'box-sizing',
-    loadChildren: 'src/app/box-sizing/box-sizing.module#BoxSizingModule', data: { name: 'box-sizing' }
+    loadChildren: () => import('src/app/box-sizing/box-sizing.module').then(m => m.BoxSizingModule), data: { name: 'box-sizing' }
   },
   {
     path: 'flexbox',
-    loadChildren: 'src/app/flexbox/flexbox.module#FlexboxModule', data: { name: 'flexbox' }
+    loadChildren: () => import('src/app/flexbox/flexbox.module').then(m => m.FlexboxModule), data: { name: 'flexbox' }
   },
   {
     path: 'margin-vs-padding',
-    loadChildren: 'src/app/margin-vs-padding/margin-vs-padding.module#MarginVsPaddingModule', data: { name: 'margin-vs-padding' }
+    loadChildren: () => import('src/app/margin-vs-padding/margin-vs-padding.module').then(m => m.MarginVsPaddingModule), data: { name: 'margin-vs-padding' }
   },
   {
     path: 'units',
-    loadChildren: 'src/app/units/units.module#UnitsModule', data: { name: 'units' }
+    loadChildren: () => import('src/app/units/units.module').then(m => m.UnitsModule), data: { name: 'units' }
   },
   {
     path: 'cascading',
-    loadChildren: 'src/app/cascading/cascading.module#CascadingModule', data: { name: 'cascading' }
+    loadChildren: () => import('src/app/cascading/cascading.module').then(m => m.CascadingModule), data: { name: 'cascading' }
   },
   {
     path: '**',
