@@ -1,10 +1,9 @@
 .flex-container {
   background-color: white;
   padding: 40px 0;
-  display: flex;
   width: 100%;
+  display: flex;
   justify-content: center;
-  /* align-items: center; */
 }
 
 .flex-container p {
