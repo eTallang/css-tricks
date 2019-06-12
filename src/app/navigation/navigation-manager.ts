@@ -60,6 +60,7 @@ export class NavigationManager {
       }
       case this.navKeys.nextPage: {
         this.pageChange.next('next');
+        this.scrollToAnchorIndex(0);
         keyEvent.preventDefault();
         break;
       }
@@ -75,6 +76,7 @@ export class NavigationManager {
       }
       case this.navKeys.prevPage: {
         this.pageChange.next('previous');
+        this.scrollToAnchorIndex(0);
         keyEvent.preventDefault();
         break;
       }
