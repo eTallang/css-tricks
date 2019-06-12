@@ -17,15 +17,25 @@ export class NavigationManager {
     prevPage: 'ArrowLeft'
   };
   private pageChange = new Subject<'next' | 'previous'>();
+  private initialItemsHasBeenSet = false;
   pageChange$ = this.pageChange.asObservable();
 
   constructor() {
     this.subscriptions.add(fromEvent(window, 'keydown').subscribe((keyEvent: KeyboardEvent) => this.onKeyDown(keyEvent)));
+    const storedIndex = localStorage.getItem('slideIndex');
+    if (storedIndex) {
+      this.anchorIndexInFocus = +storedIndex;
+    }
   }
 
   setAnchorItems(anchorItems: QueryList<SlideDirective>): this {
-    this.anchorIndexInFocus = 0;
     this.anchorItems = anchorItems;
+
+    if (this.initialItemsHasBeenSet) {
+      this.anchorIndexInFocus = 0;
+    } else {
+      this.initialItemsHasBeenSet = true;
+    }
     return this;
   }
 
@@ -84,6 +94,7 @@ export class NavigationManager {
   }
 
   private scrollToAnchorIndex(index: number): void {
+    localStorage.setItem('slideIndex', index.toString());
     this.anchorItems
       .toArray()
       [index].elementRef.nativeElement.scrollIntoView({ behavior: 'smooth' });

@@ -2,12 +2,16 @@
   --primary-color: #003459;
 }
 
+html {
+  font-size: 18px;
+}
+
 body {
   height: 100%;
   margin: 0;
   background-color: var(--primary-color);
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 
 p,
