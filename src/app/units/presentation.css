@@ -1,0 +1,16 @@
+.three-column-layout {
+  display: inline-block;
+  height: 100%;
+  border: 2px solid white;
+  box-sizing: border-box;
+}
+
+.grid-container {
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.grid-item {
+  height: 160px;
+  border: 2px solid white;
+}

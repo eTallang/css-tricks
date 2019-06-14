@@ -5,7 +5,7 @@ import { NavigationManager } from '../navigation/navigation-manager';
 @Component({
   selector: 'app-units',
   templateUrl: './units.component.html',
-  styleUrls: ['./units.component.css']
+  styleUrls: ['./units.component.css', './presentation.css']
 })
 export class UnitsComponent implements AfterViewInit {
   @ViewChildren(SlideDirective) elements: QueryList<SlideDirective>;
