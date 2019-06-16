@@ -28,13 +28,6 @@ a {
   color: white;
 }
 
-.centered {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 0;
-}
-
 h1 {
   background-color: white;
   color: var(--primary-color);
