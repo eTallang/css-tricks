@@ -4,7 +4,7 @@ import { Subscription, fromEvent, Subject } from 'rxjs';
 import { SlideComponent } from './slide.component';
 import { KeyControls } from './key-controls';
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class NavigationManager {
   private subscriptions = new Subscription();
   private anchorItems: QueryList<SlideComponent>;
@@ -21,7 +21,9 @@ export class NavigationManager {
   pageChange$ = this.pageChange.asObservable();
 
   constructor() {
-    this.subscriptions.add(fromEvent(window, 'keydown').subscribe((keyEvent: KeyboardEvent) => this.onKeyDown(keyEvent)));
+    this.subscriptions.add(
+      fromEvent(window, 'keydown').subscribe((keyEvent: KeyboardEvent) => this.onKeyDown(keyEvent))
+    );
     const storedIndex = localStorage.getItem('slideIndex');
     if (storedIndex) {
       this.anchorIndexInFocus = +storedIndex;
@@ -95,8 +97,6 @@ export class NavigationManager {
 
   private scrollToAnchorIndex(index: number): void {
     localStorage.setItem('slideIndex', index.toString());
-    this.anchorItems
-      .toArray()
-      [index].elementRef.nativeElement.scrollIntoView({ behavior: 'smooth' });
+    this.anchorItems.toArray()[index].elementRef.scrollIntoView({ behavior: 'smooth' });
   }
 }

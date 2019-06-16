@@ -6,8 +6,10 @@ import { Component, ElementRef } from '@angular/core';
   styleUrls: [ './slide.component.css' ]
 })
 export class SlideComponent {
-  get elementRef(): ElementRef<HTMLElement> {
-    return this.hostElement;
+  get elementRef(): HTMLElement {
+    if (this.hostElement) {
+      return this.hostElement.nativeElement;
+    }
   }
 
   constructor(private hostElement: ElementRef<HTMLElement>) { }
