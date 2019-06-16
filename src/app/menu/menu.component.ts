@@ -18,9 +18,7 @@ export class MenuComponent implements OnInit {
     { name: 'About me', url: 'about' },
     { name: 'Box Sizing', url: 'box-sizing' },
     { name: 'Flexbox', url: 'flexbox' },
-    // { name: 'Margin vs. padding', url: 'margin-vs-padding' },
-    { name: 'Units', url: 'units' },
-    // { name: 'Cascading', url: 'cascading' }
+    { name: 'Units', url: 'units' }
   ];
 
   constructor(private navigationManager: NavigationManager, private router: Router) {}
