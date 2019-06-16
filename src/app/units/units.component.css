@@ -61,27 +61,3 @@
   height: 160px;
   margin: 0 auto;
 }
-
-.three-column-layout {
-  display: inline-block;
-  width: 33%;
-  height: 100%;
-  border: 2px solid white;
-  box-sizing: border-box;
-}
-
-.three-column-layout:not(:last-child) {
-  /* margin-right: 10px; */
-  /* width: calc(33.3333% - 10px); */
-}
-
-.grid-container {
-  display: grid;
-  width: 1100px;
-  margin: 0 auto;
-}
-
-.grid-item {
-  height: 160px;
-  border: 2px solid white;
-}

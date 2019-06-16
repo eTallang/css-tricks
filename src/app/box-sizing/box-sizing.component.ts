@@ -6,7 +6,7 @@ import { NavigationManager } from '../navigation/navigation-manager';
 @Component({
   selector: 'app-box-sizing',
   templateUrl: './box-sizing.component.html',
-  styleUrls: ['./box-sizing.component.css']
+  styleUrls: ['./box-sizing.component.css', 'presentation.css']
 })
 export class BoxSizingComponent implements AfterViewInit {
   @ViewChildren(SlideComponent) anchorElements = new QueryList<SlideComponent>();
