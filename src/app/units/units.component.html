@@ -1,20 +1,20 @@
-<div slide>
+<app-slide>
   <h1>
     em vs rem
   </h1>
   <img src="assets/confused.gif" alt="Confused" />
-</div>
+</app-slide>
 
-<div slide class="centered">
+<app-slide class="centered">
   <div class="font-size-container" [ngStyle]="{ 'font-size.px': fontSize }">
     Container with font size
     <input class="transparent-input" [(ngModel)]="fontSize" type="number" max="36" />px
     <div class="em">Element with font size 2em</div>
     <div class="rem">Element with font size 2rem</div>
   </div>
-</div>
+</app-slide>
 
-<div slide>
+<app-slide>
   <h1>
     old school widths
   </h1>
@@ -25,9 +25,9 @@
       <div class="pixels">200px</div>
     </div>
   </div>
-</div>
+</app-slide>
 
-<div slide>
+<app-slide>
   <h1>
     Three column layout
   </h1>
@@ -36,17 +36,17 @@
     <div class="three-column-layout"></div>
     <div class="three-column-layout"></div>
   </div>
-</div>
+</app-slide>
 
-<div slide>
+<app-slide>
   <h1>
     It gets nasty
   </h1>
   <img src="assets/surprised.gif" alt="Surprised" width="400px" style="margin-bottom: 10px" />
   <img src="assets/breakpoints.png" alt="Breakpoints" width="500px" />
-</div>
+</app-slide>
 
-<div slide>
+<app-slide>
   <h1>
     css grid
   </h1>
@@ -55,9 +55,9 @@
     <div class="grid-item"></div>
     <div class="grid-item"></div>
   </div>
-</div>
+</app-slide>
 
-<div slide>
+<app-slide>
   <img src="assets/perfection.gif" alt="Perfection" width="400px" style="margin-bottom: 10px" />
   <img src="assets/css-grid-support.png" alt="CSS grid support" />
-</div>
+</app-slide>

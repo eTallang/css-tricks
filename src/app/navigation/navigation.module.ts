@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 
-import { SlideDirective } from './slide.directive';
+import { SlideComponent } from './slide.component';
 
 @NgModule({
-  declarations: [SlideDirective],
-  exports: [SlideDirective]
+  declarations: [SlideComponent],
+  exports: [SlideComponent]
 })
 export class NavigationModule {}

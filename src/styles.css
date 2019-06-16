@@ -28,16 +28,6 @@ a {
   color: white;
 }
 
-.slide {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
 .centered {
   display: flex;
   align-items: center;

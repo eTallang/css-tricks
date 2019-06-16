@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
 
-import { SlideDirective } from '../navigation/slide.directive';
+import { SlideComponent } from '../navigation/slide.component';
 import { NavigationManager } from '../navigation/navigation-manager';
 
 @Component({
@@ -9,7 +9,7 @@ import { NavigationManager } from '../navigation/navigation-manager';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements AfterViewInit {
-  @ViewChildren(SlideDirective) anchorElements = new QueryList<SlideDirective>();
+  @ViewChildren(SlideComponent) anchorElements = new QueryList<SlideComponent>();
 
   constructor(private navigationManager: NavigationManager) { }
 

@@ -1,5 +1,5 @@
 import { Component, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
-import { SlideDirective } from '../navigation/slide.directive';
+import { SlideComponent } from '../navigation/slide.component';
 import { NavigationManager } from '../navigation/navigation-manager';
 
 @Component({
@@ -8,7 +8,7 @@ import { NavigationManager } from '../navigation/navigation-manager';
   styleUrls: ['./units.component.css']
 })
 export class UnitsComponent implements AfterViewInit {
-  @ViewChildren(SlideDirective) elements: QueryList<SlideDirective>;
+  @ViewChildren(SlideComponent) elements: QueryList<SlideComponent>;
   fontSize = 18;
   constructor(private navigationManager: NavigationManager) { }
 

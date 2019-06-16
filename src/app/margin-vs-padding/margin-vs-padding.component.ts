@@ -1,6 +1,6 @@
 import { Component, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
 
-import { SlideDirective } from '../navigation/slide.directive';
+import { SlideComponent } from '../navigation/slide.component';
 import { NavigationManager } from '../navigation/navigation-manager';
 
 @Component({
@@ -9,7 +9,7 @@ import { NavigationManager } from '../navigation/navigation-manager';
   styleUrls: ['./margin-vs-padding.component.css']
 })
 export class MarginVsPaddingComponent implements AfterViewInit {
-  @ViewChildren(SlideDirective) elements: QueryList<SlideDirective>;
+  @ViewChildren(SlideComponent) elements: QueryList<SlideComponent>;
   constructor(private navigationManager: NavigationManager) { }
 
   ngAfterViewInit() {
